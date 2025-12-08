@@ -1,0 +1,22 @@
+{
+    "table1":{
+		"descricao":"Description.",
+		"alias":"aliasSQL",
+		"campos":{
+			"columnName":"alias (optional)"
+		},
+		"conexoes":{
+			"table2":{"chaveSelf":["selfKey"], "chaveOther":["connectionKey"]}
+		}
+	},
+	"table2":{
+		"descricao":"Description.",
+		"alias":"aliasSQL",
+		"campos":{
+			"columnName":"alias (optional)"
+		},
+		"conexoes":{
+			"table1":{"chaveSelf":["selfKey"], "chaveOther":["connectionKey"]}
+		}
+	}
+}

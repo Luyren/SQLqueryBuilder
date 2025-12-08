@@ -36,7 +36,7 @@ pip-delete-this-directory.txt
 
 #User-specific files
 modelos/
-databases/
+databases/*
 !databases/template.json
-settings/
+settings/*
 !settings/settings.json

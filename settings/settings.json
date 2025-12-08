@@ -1,0 +1,22 @@
+{
+	"joinValores": [
+		"JOIN",
+		"LEFT JOIN",
+		"RIGHT JOIN",
+		"FULL JOIN"
+	],
+	"compararValores": [
+		"",
+		"=",
+		"!=",
+		">",
+		">=",
+		"<",
+		"<=",
+		"in",
+		"not in"
+	],
+	"base": "databases/tabelasBase.json",
+	"lang": "PT",
+	"modelo": ""
+}
