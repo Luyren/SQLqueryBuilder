@@ -96,15 +96,15 @@ As configurações padrão são:
 
 #### Utilizando o extrator
 
-![Legenda do menu do extrator.](readmeAssets\docMenuReference.png "Legenda do extrator.")
+![Legenda do menu do extrator.](readmeAssets\docMenuReference.png?raw=true "Legenda do extrator.")
 
-1. Remove todas as tabelas e campos do extrator.
-2. Salva a extração atual em um modelo, no formato json.
-3. Carrega um modelo previamente salvo.
-4. Exporta o extrator em um arquivo txt.
-5. Encerra o script.
+1. **Novo Modelo:** remove todas as tabelas e campos do extrator.
+2. **Abrir Modelo:** carrega um modelo previamente salvo.
+3. **Salvar Modelo:** salva a extração atual em um modelo, no formato json.
+4. **Exportar Modelo:** exporta o extrator em um arquivo txt.
+5. **Sair:** encerra o script.
 
-![Legenda do extrator.](readmeAssets\docReference.png "Legenda do extrator.")
+![Legenda do extrator.](readmeAssets\docReference.png?raw=true "Legenda do extrator.")
 
 1. **Aplicar Alterações:** aplica todas as tabelas, campos, conexões e preferências ao extrator, atualizando o visualizador.
 2. **Visualizador:** visualiza a query SQL resultante do extrator.
