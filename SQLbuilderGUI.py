@@ -60,12 +60,13 @@ for root, dir, file in os.walk("lang"):
 		listaIdiomas.append(i.split(".")[0])
 #Inicializar extrator
 extracao = eb.extrator()
-def carregarExtrator(base=extracao, settings=settings):
+def carregarExtrator(base=extracao, settings=settings, add=False):
 	"""Carregar modelo de extrator e salva como último modelo trabalhado."""
 	base.carregarExtrator()
-	carregarGUI()
-	settings["modelo"] = base.modelo
-	salvarConfig()
+	carregarGUI(add=add)
+	if not add:
+		settings["modelo"] = base.modelo
+		salvarConfig()
 def salvarExtrator(base=extracao, settings=settings):
 	"""Salva modelo de extrator e salva como último modelo trabalhado"""
 	atualizarExtrator()
@@ -141,13 +142,17 @@ def atualizarExtrator(base=extracao):
 ##########################
 #lista contendo as tabelas adicionadas
 guiTabelas = list()
-def limparGUI():
+def limparGUI(clear=False):
 	for i in guiTabelas:
 		i["frame"].destroy()
-	#extracao.clear()
-def carregarGUI():
-	limparGUI()
-	guiTabelas.clear()
+	if clear:
+		extracao.clear()
+		guiTabelas.clear()
+		atualizarExtrator()
+def carregarGUI(add=False):
+	if not add:
+		limparGUI()
+		guiTabelas.clear()
 	for j in extracao.tabelas.values():
 		guiAddTabela(nomeTabela=j.id, loadData=j)
 	atualizarExtrator()
@@ -162,8 +167,9 @@ root.config(menu=menu)
 	#Menu arquivo
 fileMenu = tk.Menu(menu, tearoff=0)
 menu.add_cascade(label=textoGUI["arquivo"], menu=fileMenu)
-fileMenu.add_command(label=textoGUI["novoModelo"], command=limparGUI)
+fileMenu.add_command(label=textoGUI["novoModelo"], command=lambda: limparGUI(clear=True))
 fileMenu.add_command(label=textoGUI["abrirModelo"], command=carregarExtrator)
+fileMenu.add_command(label=textoGUI["adicionarModelo"], command=lambda:carregarExtrator(add=True))
 fileMenu.add_command(label=textoGUI["salvarModelo"], command=salvarExtrator)
 fileMenu.add_command(label=textoGUI["exportarModelo"], command=extracao.exportarExtrator)
 fileMenu.add_command(label=textoGUI["sairExtrator"], command=root.quit)
@@ -289,9 +295,6 @@ def guiAddTabela(texto=textoGUI, save=guiTabelas, nomeTabela="", loadData={}):
 	headerCampos.grid(row=baseRow, column=0, padx=2, pady=2, columnspan=4, sticky="nw")
 	output["rowCount"] = baseRow + 1
 	frame.grid(row=len(save), column=0)
-	#automaticamente adiciona a primeira coluna
-	if not bool(loadData):
-		output["campos"].append(guiAddCampo(output, baseTabelas[nome].campos))
 	#configura o botão para adicionar novo campo
 	addCampo.configure(command=lambda:output["campos"].append(guiAddCampo(output, baseTabelas[nome].campos)))
 	if bool(loadData):
