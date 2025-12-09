@@ -14,7 +14,9 @@
 		"<",
 		"<=",
 		"in",
-		"not in"
+		"not in",
+		"is",
+		"is not"
 	],
 	"base": "databases/tabelasBase.json",
 	"lang": "PT",
