@@ -356,7 +356,6 @@ def guiAddCampo(parent, campos, loadData={}):
 		output["valorFiltro"].set(loadData.filtro)
 		filtroBox.current(listaValores.index(loadData.filtro))
 		output["valorFiltroAlvo"].set(loadData.filtroAlvo)
-		filtroEntry.config(text=loadData.filtroAlvo)
 		output["valorOrdenar"].set(loadData.ordenar)
 		if bool(loadData.ordenar):
 			botaoOrdenar.select()
