@@ -99,10 +99,11 @@ As configurações padrão são:
 ![Legenda do menu do extrator.](/readmeAssets/docMenuReference.png "Legenda do extrator.")
 
 1. **Novo Modelo:** remove todas as tabelas e campos do extrator.
-2. **Abrir Modelo:** carrega um modelo previamente salvo.
-3. **Salvar Modelo:** salva a extração atual em um modelo, no formato json.
-4. **Exportar Modelo:** exporta o extrator em um arquivo txt.
-5. **Sair:** encerra o script.
+2. **Abrir Modelo:** reseta o extrator e carrega um modelo previamente salvo.
+3. **Adicionar Modelo:** adiciona um modelo previamente salvo ao extrator atual.
+4. **Salvar Modelo:** salva a extração atual em um modelo, no formato json.
+5. **Exportar Modelo:** exporta o extrator em um arquivo txt.
+6. **Sair:** encerra o script.
 
 ![Legenda do extrator.](/readmeAssets/docReference.png "Legenda do extrator.")
 
