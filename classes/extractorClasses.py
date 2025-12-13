@@ -85,7 +85,7 @@ class campo:
 		"Retorna o campo e formata para SELECT SQL, com tabela de origem e alias."
 		output = str(self)
 		if not self.alias == "":
-			output += f" AS '{self.alias}'"
+			output += f' AS "{self.alias}"'
 		return output
 class instanceCampo(campo):
 	"""Instância de um campo de tabela Benner, para receber valor de prioridade e group by"""
@@ -133,9 +133,9 @@ class extrator:
 		if bool(self.extratorFiltros):
 			output += "WHERE "
 			for i in self.extratorFiltros:
-				output += f"{i.getFiltro()}, "
+				output += f"{i.getFiltro()} AND "
 			else:
-				output = f"{output[:-2]}\n"
+				output = f"{output[:-5]}\n"
 		#Adicionar ordem
 		if bool(self.extratorOrderBy):
 			output += "ORDER BY "
